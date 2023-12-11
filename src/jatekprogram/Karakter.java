@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Karakter {
     private int eletero, ugyesseg, szerencse;
-    ArrayList<String> felszereles;
+    ArrayList<Targy> felszereles;
     private final Random RND = new Random();
 
     public Karakter() {
@@ -25,6 +25,16 @@ public class Karakter {
 
     public int getSzerencse() {
         return szerencse;
+    }
+    
+    public void felvesz(Targy targy){
+        this.felvesz(targy, 1);
+    }
+    
+    public void felvesz(Targy targy, int db){
+        for (int i = 0; i < db; i++) {
+            this.felszereles.add(targy);
+        }
     }
     
     public int dobas(){
