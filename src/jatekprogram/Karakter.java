@@ -62,7 +62,7 @@ public class Karakter {
                 }
                 i++;
             }
-            System.out.printf("%s-ból/ből sikeresen felhasználva %d db\n", nev, mennyit);
+            System.out.printf("%s-ból/ből sikeresen felhasználva %d db\n", nev, dbVan);
         } else {
             System.out.printf("A %s-t nem sikreült felhasználni! (%d/%d)\n", nev, mennyit, dbVan);
         }

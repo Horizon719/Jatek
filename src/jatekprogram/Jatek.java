@@ -21,7 +21,8 @@ public class Jatek {
         karakter.hasznal("a", 6);
         karakter.hasznal("b", 2);
         karakter.hasznal("c", 5, false);
-        karakter.hasznal("d", 5);
+        karakter.hasznal("d", 4);
+        karakter.hasznal("e");
     }
     
 }
