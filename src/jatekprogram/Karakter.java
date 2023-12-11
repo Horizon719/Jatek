@@ -47,24 +47,28 @@ public class Karakter {
     
     public void hasznal(String nev, int mennyit, boolean levon){
         int dbVan = 0;
-        for (Targy elem : felszereles) {
-            if (elem.getNev().equals(nev)) {
+        for (int i = 0; i < felszereles.size() && dbVan<mennyit; i++) {
+            if (felszereles.get(i).getNev().equals(nev)) {
                 dbVan++;
             }
         }
-        if (levon || dbVan >= mennyit) {
-            int i = 0;
-            int levonandoDb = mennyit;
-            while(i < felszereles.size() && levonandoDb != 0){
-                if(felszereles.get(i).getNev().equals(nev)){
-                    felszereles.remove(i);
-                    levonandoDb--;
+        if (dbVan > 0) {
+            if (levon || dbVan >= mennyit) {
+                int i = felszereles.size()-1;
+                int levonandoDb = mennyit;
+                while(i >= 0 && levonandoDb != 0){
+                    if(felszereles.get(i).getNev().equals(nev)){
+                        felszereles.remove(i);
+                        levonandoDb--;
+                    }
+                    i--;
                 }
-                i++;
+                System.out.printf("%s-ból/ből sikeresen felhasználva %d db\n", nev, dbVan);
+            } else {
+                System.out.printf("A %s-t nem sikreült felhasználni! (%d/%d)\n", nev, mennyit, dbVan);
             }
-            System.out.printf("%s-ból/ből sikeresen felhasználva %d db\n", nev, dbVan);
         } else {
-            System.out.printf("A %s-t nem sikreült felhasználni! (%d/%d)\n", nev, mennyit, dbVan);
+            System.out.println("Nincs ilyen felszerelés a karakternél.");
         }
     }
     
