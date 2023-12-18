@@ -7,7 +7,9 @@ public class MainForm extends javax.swing.JFrame {
     public MainForm() {
         initComponents();
         helyszin = new Start();
-        txtArea1.setText(helyszin.leiras());
+        txtArea1.insert(helyszin.leiras()+ "\n", 0);
+        jButton1.setVisible(false);
+        jButton2.setText(helyszin.egyikFelirat());
     }
 
     @SuppressWarnings("unchecked")
@@ -27,9 +29,14 @@ public class MainForm extends javax.swing.JFrame {
         txtArea1.setRows(5);
         jScrollPane1.setViewportView(txtArea1);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("másik irány");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jButton2.setText("egyik irány");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -70,8 +77,14 @@ public class MainForm extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         helyszin = helyszin.egyikIrany();
-        txtArea1.setText(helyszin.leiras());
+        txtArea1.insert(helyszin.leiras()+ "\n", 0);
+        txtArea1.setCaretPosition(0);
+        jButton2.setText(helyszin.egyikFelirat());
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
