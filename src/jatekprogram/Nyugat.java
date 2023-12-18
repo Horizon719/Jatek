@@ -1,30 +1,29 @@
 package jatekprogram;
 
-public class Bal extends Helyszin implements MasikIrany{
-
+public class Nyugat extends Helyszin implements MasikIrany{
+    
     @Override
     public String leiras() {
-        return "Ez a bal! Keletre vagy nyugatra?";
+        return "Ez Nyugat!";
     }
 
     @Override
     public Helyszin egyikIrany() {
-        return new Kelet();
+        return new Nyugat2();
     }
 
     @Override
     public String egyikFelirat() {
-        return "keletre";
+        return "nyugat2";
     }
-
+    
     @Override
     public Helyszin masikIrany() {
-        return new Nyugat();
+        return new Nyugat1();
     }
 
     @Override
     public String masikFelirat() {
-        return "nyugatra";
+        return "nyugat1";
     }
-    
 }

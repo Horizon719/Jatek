@@ -77,13 +77,24 @@ public class MainForm extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         helyszin = helyszin.egyikIrany();
+        if (helyszin instanceof MasikIrany) {
+            jButton1.setVisible(true);
+            jButton1.setText(((MasikIrany)helyszin).masikFelirat());
+        }
         txtArea1.insert(helyszin.leiras()+ "\n", 0);
         txtArea1.setCaretPosition(0);
         jButton2.setText(helyszin.egyikFelirat());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        helyszin = ((MasikIrany)helyszin).masikIrany();
+        if (helyszin instanceof MasikIrany) {
+            jButton1.setVisible(true);
+            jButton1.setText(((MasikIrany)helyszin).masikFelirat());
+        }
+        txtArea1.insert(helyszin.leiras()+ "\n", 0);
+        txtArea1.setCaretPosition(0);
+        jButton2.setText(helyszin.egyikFelirat());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
