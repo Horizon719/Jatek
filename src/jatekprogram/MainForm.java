@@ -4,6 +4,8 @@ public class MainForm extends javax.swing.JFrame {
 
     public MainForm() {
         initComponents();
+        Helyszin helyszin = new Start();
+        txtArea1.setText(helyszin.leiras());
     }
 
     @SuppressWarnings("unchecked")
@@ -11,7 +13,7 @@ public class MainForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -19,13 +21,18 @@ public class MainForm extends javax.swing.JFrame {
         setTitle("Játék");
         setMinimumSize(new java.awt.Dimension(300, 200));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtArea1.setColumns(20);
+        txtArea1.setRows(5);
+        jScrollPane1.setViewportView(txtArea1);
 
         jButton1.setText("jButton1");
 
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,6 +65,11 @@ public class MainForm extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Helyszin helyszin = new Kezdes();
+        txtArea1.setText(helyszin.leiras());
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,6 +110,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtArea1;
     // End of variables declaration//GEN-END:variables
 }
